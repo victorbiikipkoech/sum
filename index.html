@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: green;
+            text-align: center;
+        }
+
+        .details {
+            margin-bottom: 20px;
+        }
+
+        .details label {
+            font-weight: bold;
+        }
+
+        .details p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <div class="details">
+            <label for="fullName">Full Name:</label>
+            <p id="fullName"></p>
+        </div>
+        <div class="details">
+            <label for="phoneNumber">Phone Number:</label>
+            <p id="phoneNumber"></p>
+        </div>
+        <div class="details">
+            <label for="country">Country:</label>
+            <p id="country"></p>
+        </div>
+        <div class="details">
+            <label for="gender">Gender:</label>
+            <p id="gender"></p>
+        </div>
+    </div>
+
+    <script>
+        // Get user details from URL query parameters
+        const params = new URLSearchParams(window.location.search);
+        const fullName = params.get('fullName');
+        const phoneNumber = params.get('phoneNumber');
+        const country = params.get('country');
+        const gender = params.get('gender');
+
+        // Display user details on the page
+        document.getElementById('fullName').innerText = fullName;
+        document.getElementById('phoneNumber').innerText = phoneNumber;
+        document.getElementById('country').innerText = country;
+        document.getElementById('gender').innerText = gender;
+    </script>
+</body>
+</html>
